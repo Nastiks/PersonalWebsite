@@ -12101,3 +12101,15 @@ pre .code {
   padding: 0 !important;
   margin: 0 !important;
 }
+
+.contact-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.contact-row-header {
+  display: flex !important;
+  align-items: center;
+  height: 100%;
+}
+
