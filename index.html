@@ -1105,13 +1105,16 @@
           <div class="col-lg-8">
             <div class="contact-form-card">
               <h4 class="contact-title">Send a message</h4>
-              <form action="">
+              <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="df0ec793-eb58-423e-ac4f-87eea74ca8e5">
+                <input type="hidden" name="redirect" value="https://stacy.pictures">
                 <div class="form-group">
                   <input
                     class="form-control"
                     type="text"
                     placeholder="Name *"
                     required
+                    name="name"
                   />
                 </div>
                 <div class="form-group">
@@ -1120,6 +1123,7 @@
                     type="email"
                     placeholder="Email *"
                     required
+                    name="email"
                   />
                 </div>
                 <div class="form-group">
@@ -1129,10 +1133,11 @@
                     placeholder="Message *"
                     rows="7"
                     required
+                    name="message"
                   ></textarea>
                 </div>
                 <div class="form-group">
-                  <button type="submit" class="form-control btn btn-primary">
+                  <button type="submit" class="form-control btn btn-primary" onclick="submitHandler">
                     Send Message
                   </button>
                 </div>
@@ -1233,5 +1238,6 @@
     <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
     <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
   </body>
 </html>
