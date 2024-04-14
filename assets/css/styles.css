@@ -12113,3 +12113,25 @@ pre .code {
   height: 100%;
 }
 
+.submit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+@media (max-width: 991.98px) {
+  .submit-container {
+    flex-direction: column;
+  }
+}
+
+.submit-button {
+  height: 78px;
+}
+
+.h-captcha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

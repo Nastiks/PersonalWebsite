@@ -1105,9 +1105,17 @@
           <div class="col-lg-8">
             <div class="contact-form-card">
               <h4 class="contact-title">Send a message</h4>
-              <form action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="da5be332-9730-42c9-8a5a-53d4de448766">
-                <input type="hidden" name="redirect" value="https://stacy.pictures/success.html">
+              <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="da5be332-9730-42c9-8a5a-53d4de448766"
+                />
+                <input
+                  type="hidden"
+                  name="redirect"
+                  value="https://stacy.pictures/success.html"
+                />
                 <div class="form-group">
                   <input
                     class="form-control"
@@ -1136,8 +1144,16 @@
                     name="message"
                   ></textarea>
                 </div>
-                <div class="form-group">
-                  <button type="submit" class="form-control btn btn-primary" onclick="submitHandler">
+                <div class="form-group submit-container">
+                  <div
+                    class="h-captcha"
+                    data-captcha="true"
+                    data-size="normal"
+                  ></div>
+                  <button
+                    type="submit"
+                    class="form-control btn btn-primary submit-button"
+                  >
                     Send Message
                   </button>
                 </div>
