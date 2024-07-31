@@ -11818,9 +11818,27 @@ pre .code {
   color: #888;
 }
 
+.avatar-mobile {
+  display: none;
+}
+
 @media (max-width: 991.98px) {
   .navbar .brand {
     display: none;
+  }
+
+  .avatar-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 15px;
+  }
+  
+  .avatar-mobile-image {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
   }
 }
 
