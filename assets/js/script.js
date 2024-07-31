@@ -193,15 +193,3 @@ function like(id) {
   likeButton.disabled = true;
   likeButton.style.color = "red";
 }
-
-setTimeout(() => {
-  const video = document.getElementById("myVideo");
-  let opacity = 0;
-  const interval = setInterval(() => {
-    opacity += 0.03;
-    video.style.opacity = opacity;
-    if (opacity >= 0.8) {
-      clearInterval(interval);
-    }
-  }, 800);
-}, 1000);
