@@ -178,3 +178,18 @@ function contactMe(option) {
   // scroll to contact form
   document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
 }
+
+function like(id) {
+  const likeButton = document.getElementById(id);
+  const likeCount = likeButton.querySelector("span");
+  const currentCount = parseInt(likeCount.innerHTML);
+  if (likeButton.style.color === "red") {
+    likeCount.innerHTML = currentCount - 1;
+    likeButton.disabled = false;
+    likeButton.style.color = "black";
+    return;
+  }
+  likeCount.innerHTML = currentCount + 1;
+  likeButton.disabled = true;
+  likeButton.style.color = "red";
+}

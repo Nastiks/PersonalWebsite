@@ -11663,6 +11663,14 @@ p {
   opacity: 0.8;
 }
 
+.post-details {
+  user-select: none;
+}
+
+.like-count {
+  cursor: pointer;
+}
+
 .blog-card .content-holder .post-details {
   margin: 15px 0 15px !important;
 }
