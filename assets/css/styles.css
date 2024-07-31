@@ -12115,3 +12115,8 @@ pre .code {
   justify-content: center;
   align-items: center;
 }
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
