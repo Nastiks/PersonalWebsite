@@ -196,12 +196,6 @@ function like(id) {
 
 setTimeout(() => {
   const video = document.getElementById("myVideo");
-  const source = document.createElement("source");
-  source.src = "assets/video-125921.mp4";
-  source.type = "video/mp4";
-  video.appendChild(source);
-
-  // set animation - opacity from 0 to 0.7 in 5 seconds
   let opacity = 0;
   const interval = setInterval(() => {
     opacity += 0.03;
