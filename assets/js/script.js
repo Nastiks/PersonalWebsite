@@ -152,3 +152,29 @@ form.addEventListener("submit", function (e) {
     return;
   }
 });
+
+function contactMe(option) {
+  const greeting = "Hello, Stacy! How are you doing today? ";
+  const userText =
+    " My dog is [dog breed] and [dog age] years old. Our case is [short description].";
+  if (option === "long-term") {
+    const text =
+      greeting + "I am interested in a long-term partnership." + userText;
+    document.getElementById("user-text-area").value = text;
+  } else if (option === "starter") {
+    const text = greeting + "I am interested in a starter pack." + userText;
+    document.getElementById("user-text-area").value = text;
+  } else if (option === "daily") {
+    const text = greeting + "I am interested in daily pack." + userText;
+    document.getElementById("user-text-area").value = text;
+  } else if (option === "favorite") {
+    const text = greeting + "I am interested in favorite pack." + userText;
+    document.getElementById("user-text-area").value = text;
+  } else if (option === "fluffy") {
+    const text = greeting + "I am interested in fluffy pack." + userText;
+    document.getElementById("user-text-area").value = text;
+  }
+
+  // scroll to contact form
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+}

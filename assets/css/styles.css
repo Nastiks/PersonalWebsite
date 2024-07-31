@@ -11503,7 +11503,7 @@ p {
 }
 
 .price-card.price-card-requried:after {
-  content: "New";
+  content: "Popular";
   position: absolute;
   right: -25px;
   top: 10px;
