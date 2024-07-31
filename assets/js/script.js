@@ -193,3 +193,21 @@ function like(id) {
   likeButton.disabled = true;
   likeButton.style.color = "red";
 }
+
+setTimeout(() => {
+  const video = document.getElementById("myVideo");
+  const source = document.createElement("source");
+  source.src = "assets/video-125921.mp4";
+  source.type = "video/mp4";
+  video.appendChild(source);
+
+  // set animation - opacity from 0 to 0.7 in 5 seconds
+  let opacity = 0;
+  const interval = setInterval(() => {
+    opacity += 0.03;
+    video.style.opacity = opacity;
+    if (opacity >= 0.8) {
+      clearInterval(interval);
+    }
+  }, 800);
+}, 1000);

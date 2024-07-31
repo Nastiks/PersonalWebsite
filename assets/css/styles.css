@@ -11897,10 +11897,23 @@ pre .code {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: #fff;
+  user-select: none;
+}
+
+.video-background {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  -webkit-filter: blur(15px);
+  filter: blur(15px);
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
 }
 
 .header .container {
-  position: relative;
   height: 100%;
 }
 
@@ -11908,11 +11921,13 @@ pre .code {
   width: 100%;
   position: absolute;
   left: 0;
+  padding: 15px;
   top: 55%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   color: #fff;
+  z-index: 1000;
 }
 
 .header .header-content .header-subtitle {
@@ -11933,6 +11948,11 @@ pre .code {
   font-weight: 500;
   font-size: calc(12px + (19 - 12) * ((100vw - 300px) / (1600 - 300)));
   margin-bottom: 40px;
+}
+
+.social-icons-header {
+  z-index: 1000;
+  position: relative;
 }
 
 @media (max-width: 767.98px) {
