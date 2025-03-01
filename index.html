@@ -11,9 +11,7 @@
       content="Stacy Belova, Dog Behaviorist, San Diego - Make your dog happy with my services"
     />
     <meta name="author" content="Devcrud" />
-    <title>
-      Stacy Belova | Dog behaviorist | San Diego | Dog Trainer
-    </title>
+    <title>Stacy Belova | Dog behaviorist | San Diego | Dog Trainer</title>
     <link
       rel="stylesheet"
       href="assets/vendors/themify-icons/css/themify-icons.css"
@@ -54,8 +52,10 @@
           </li>
           <li class="social-item">
             <a
+              onclick="getContactMe('whatsapp')"
+              href="javascript:void(0)"
+              style="cursor: pointer"
               class="social-link text-light"
-              href="https://wa.me/18582805191?text=Hello%21%20I%20would%20like%20to%20talk%20about%20my%20dog's..."
               target="_blank"
               ><i class="fa-brands fa-whatsapp"></i
             ></a>
@@ -1039,8 +1039,25 @@
                 </div>
                 <div class="col-10 contact-row">
                   <h6 class="d-inline contact-row-header">
-                    <a class="text-muted" href="tel:+18582805191"
-                      >(858) 280-5191</a
+                    <a
+                      class="text-muted"
+                      id="phone-link"
+                      style="cursor: pointer"
+                      onclick="
+                      const elementId = 'phone-link';
+                      gtag('event', 'click', {
+                        'event_category': 'phone',
+                        'event_label': btoa(numRef)
+                      });
+                      const el = document.getElementById(elementId);
+                      if (el.href) {
+                        return;
+                      }
+                      el.innerText = humanNum;
+                      el.href = numRef;
+                      event.preventDefault(); 
+                      "
+                      >Click to see</a
                     >
                   </h6>
                 </div>
@@ -1102,8 +1119,10 @@
                 </li>
                 <li class="social-item">
                   <a
+                    style="cursor: pointer"
+                    onclick="getContactMe('whatsapp')"
+                    href="javascript:void(0)"
                     class="social-link"
-                    href="https://wa.me/18582805191?text=Hello%21%20I%20would%20like%20to%20talk%20about%20my%20dog's..."
                     target="_blank"
                     ><i class="fa-brands fa-whatsapp" aria-hidden="true"></i
                   ></a>
@@ -1123,7 +1142,7 @@
           </script>
           Created With <i class="fa-solid fa-heart" style="color: #ffd43b"></i>
           By
-          <a href="https://www.facebook.com/bvd97" target="_blank"
+          <a href="https://belov.us" target="_blank"
             ><span class="text-danger" title="Senior Software Engineer"
               >Vadim Belov</span
             ></a
@@ -1148,6 +1167,39 @@
       }
       gtag("js", new Date());
       gtag("config", "G-GZ447EVTRC");
+      const numBase64 =
+        "b2RpbnZvc2VtcHlhdHZvc2Vtc2hlc3RzZW1kdmFzaGVzdG5vbHZvc2VtZGV2eWF0";
+
+      function decode(encoded) {
+        const decodedFromBase64 = atob(encoded);
+        return decodedFromBase64
+          .replaceAll("odin", "1")
+          .replaceAll("dva", "2")
+          .replaceAll("tri", "3")
+          .replaceAll("chetire", "4")
+          .replaceAll("pyat", "5")
+          .replaceAll("shest", "6")
+          .replaceAll("vosem", "8")
+          .replaceAll("sem", "7")
+          .replaceAll("devyat", "9")
+          .replaceAll("nol", "0")
+          .replaceAll("vo", "+");
+      }
+
+      const decoded = decode(numBase64);
+      const humanNum = decoded
+        .slice(1)
+        .replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+      const numRef = "tel:+" + decoded;
+
+      function getContactMe(type) {
+        gtag("event", "click", {
+          event_category: "contact",
+          event_label: type,
+        });
+        const waLink = `https://wa.me/${decoded}?text=Hello%21%20I%20would%20like%20to%20talk%20about%20my%20dog's...`;
+        window.open(waLink, "_blank").focus();
+      }
     </script>
   </body>
 </html>
